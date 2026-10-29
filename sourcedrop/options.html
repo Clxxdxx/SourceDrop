@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SourceDrop — Options</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --bg: #fff; --surface: #f7f7f8; --text: #1f2328;
+      --muted: #656d76; --border: #d0d7de; --accent: #0969da;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0d1117; --surface:#161b22; --text:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#58a6ff; }
+    }
+    body { margin: 0; background: var(--bg); color: var(--text); }
+    main { max-width: 680px; margin: 0 auto; padding: 32px 20px; }
+    section { padding: 18px; margin: 16px 0; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+    h1 { margin-top: 0; } h2 { font-size: 17px; }
+    label { display: block; margin: 12px 0; }
+    select { width: 100%; padding: 8px; margin-top: 6px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+    .check { display: flex; gap: 8px; align-items: center; }
+    .muted { color: var(--muted); }
+    #saved { min-height: 20px; color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>SourceDrop</h1>
+    <p class="muted" data-i18n="tagline">Capture provenance, not bibliography.</p>
+
+    <section>
+      <h2 data-i18n="optionsTitle">Options</h2>
+
+      <label>
+        <span data-i18n="defaultFormat">Default format</span>
+        <select id="defaultFormat">
+          <option value="plain">Plain</option>
+          <option value="quote_url">Quote + URL</option>
+          <option value="markdown">Markdown</option>
+        </select>
+      </label>
+
+      <label class="check">
+        <input id="includeDate" type="checkbox">
+        <span data-i18n="includeDate">Include access date in citations</span>
+      </label>
+
+      <p id="saved" role="status"></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="aboutTitle">About</h2>
+      <p data-i18n="aboutBody">SourceDrop stores your clips locally in Chrome. It does not use accounts, analytics, AI or remote servers.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="proTitle">Pro</h2>
+      <p data-i18n="proBody">Pro is planned with unlimited clips, custom templates, tags, advanced search, favorite filters and synced settings.</p>
+      <p class="muted" data-i18n="proPricing">Planned pricing: €4.99/month or €29 one-time.</p>
+      <p data-i18n="comingSoon">Payments are not implemented yet.</p>
+    </section>
+  </main>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

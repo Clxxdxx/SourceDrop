@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SourceDrop</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <h1>SourceDrop</h1>
+        <p data-i18n="tagline">Capture provenance, not bibliography.</p>
+      </div>
+      <button id="optionsButton" class="icon-button" type="button" aria-label="Options">⚙</button>
+    </header>
+
+    <section class="toolbar" aria-label="Clip tools">
+      <label class="search">
+        <span class="sr-only" data-i18n="searchLabel">Search clips</span>
+        <input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Search text, title or URL">
+      </label>
+      <span id="count" class="count">0/100</span>
+    </section>
+
+    <section id="limitNotice" class="notice hidden" role="status">
+      <strong data-i18n="limitTitle">Free limit reached</strong>
+      <p data-i18n="limitBody">You have reached the free 100-clip limit.</p>
+      <button id="upgradeButton" type="button" class="secondary" data-i18n="upgrade">Upgrade to Pro</button>
+    </section>
+
+    <section class="export-row">
+      <button id="exportJson" type="button" class="secondary" data-i18n="exportJson">Export JSON</button>
+      <button id="exportMarkdown" type="button" class="secondary" data-i18n="exportMarkdown">Export Markdown</button>
+    </section>
+
+    <section id="clips" class="clips" aria-live="polite"></section>
+
+    <p id="emptyState" class="empty" data-i18n="emptyState">No clips yet. Select text on any page and use SourceDrop from the context menu.</p>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
